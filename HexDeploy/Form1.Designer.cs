@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.closebutton = new System.Windows.Forms.Button();
-            this.minbutton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.sendbutton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,30 +43,6 @@
             this.testbutton = new System.Windows.Forms.Button();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.SuspendLayout();
-            // 
-            // closebutton
-            // 
-            this.closebutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.closebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closebutton.Location = new System.Drawing.Point(600, 12);
-            this.closebutton.Name = "closebutton";
-            this.closebutton.Size = new System.Drawing.Size(58, 25);
-            this.closebutton.TabIndex = 0;
-            this.closebutton.Text = "Close";
-            this.closebutton.UseVisualStyleBackColor = false;
-            this.closebutton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // minbutton
-            // 
-            this.minbutton.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.minbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minbutton.Location = new System.Drawing.Point(535, 12);
-            this.minbutton.Name = "minbutton";
-            this.minbutton.Size = new System.Drawing.Size(59, 25);
-            this.minbutton.TabIndex = 1;
-            this.minbutton.Text = "Min";
-            this.minbutton.UseVisualStyleBackColor = false;
-            this.minbutton.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -190,7 +164,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(667, 473);
-            this.ControlBox = false;
             this.Controls.Add(this.testbutton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.handleTextbox);
@@ -204,10 +177,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.sendbutton);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.minbutton);
-            this.Controls.Add(this.closebutton);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mainform";
             this.Text = "2017-11-19";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -217,9 +187,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button closebutton;
-        private System.Windows.Forms.Button minbutton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button sendbutton;
         private System.Windows.Forms.TextBox textBox2;

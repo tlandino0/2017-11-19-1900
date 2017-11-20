@@ -18,29 +18,6 @@ namespace HexDeploy
         {
            
         }
-        protected override void WndProc(ref Message m)
-        {
-            //Makes a grabbable window. Removing if intrusive to user experience.
-            base.WndProc(ref m);
-            if (m.Msg == WM_NCHITTEST)
-                m.Result = (IntPtr)(HT_CAPTION);
-        }
-        //constants
-        private const int WM_NCHITTEST = 0x84;
-        private const int HT_CLIENT = 0x1;
-        private const int HT_CAPTION = 0x2;
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //closes the form, although it's one of the worst ways to do it.
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-           this.WindowState = FormWindowState.Minimized;
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             //Plans.jpeg
