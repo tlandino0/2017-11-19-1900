@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.sendingTextbox = new System.Windows.Forms.TextBox();
             this.sendbutton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.msgTextbox = new System.Windows.Forms.TextBox();
             this.mainmenuStrip = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,12 +47,12 @@
             this.mainmenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // sendingTextbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 426);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(537, 20);
-            this.textBox1.TabIndex = 2;
+            this.sendingTextbox.Location = new System.Drawing.Point(12, 426);
+            this.sendingTextbox.Name = "sendingTextbox";
+            this.sendingTextbox.Size = new System.Drawing.Size(537, 20);
+            this.sendingTextbox.TabIndex = 2;
             // 
             // sendbutton
             // 
@@ -64,13 +64,13 @@
             this.sendbutton.UseVisualStyleBackColor = true;
             this.sendbutton.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox2
+            // msgTextbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 65);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(646, 355);
-            this.textBox2.TabIndex = 4;
+            this.msgTextbox.Location = new System.Drawing.Point(12, 65);
+            this.msgTextbox.Multiline = true;
+            this.msgTextbox.Name = "msgTextbox";
+            this.msgTextbox.Size = new System.Drawing.Size(646, 355);
+            this.msgTextbox.TabIndex = 4;
             // 
             // mainmenuStrip
             // 
@@ -191,9 +191,9 @@
             this.Controls.Add(this.IPtextbox);
             this.Controls.Add(this.passwdtextbox);
             this.Controls.Add(this.PortTextbox);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.msgTextbox);
             this.Controls.Add(this.sendbutton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.sendingTextbox);
             this.Controls.Add(this.mainmenuStrip);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -209,9 +209,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox sendingTextbox;
         private System.Windows.Forms.Button sendbutton;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox msgTextbox;
         private System.Windows.Forms.MenuStrip mainmenuStrip;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem connectionToolStripMenuItem;
