@@ -30,7 +30,6 @@
         {
             this.sendingTextbox = new System.Windows.Forms.TextBox();
             this.sendbutton = new System.Windows.Forms.Button();
-            this.msgTextbox = new System.Windows.Forms.TextBox();
             this.mainmenuStrip = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +43,7 @@
             this.passwdtextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.IPtextbox = new System.Windows.Forms.TextBox();
+            this.msgTextbox = new System.Windows.Forms.RichTextBox();
             this.mainmenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             // 
             this.sendingTextbox.AcceptsTab = true;
             this.sendingTextbox.Location = new System.Drawing.Point(16, 524);
-            this.sendingTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.sendingTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sendingTextbox.Multiline = true;
             this.sendingTextbox.Name = "sendingTextbox";
             this.sendingTextbox.Size = new System.Drawing.Size(715, 22);
@@ -60,22 +60,14 @@
             // sendbutton
             // 
             this.sendbutton.Location = new System.Drawing.Point(752, 522);
-            this.sendbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.sendbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sendbutton.Name = "sendbutton";
             this.sendbutton.Size = new System.Drawing.Size(100, 28);
             this.sendbutton.TabIndex = 3;
             this.sendbutton.Text = "Send";
             this.sendbutton.UseVisualStyleBackColor = true;
             this.sendbutton.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // msgTextbox
-            // 
-            this.msgTextbox.Location = new System.Drawing.Point(13, 80);
-            this.msgTextbox.Margin = new System.Windows.Forms.Padding(4);
-            this.msgTextbox.Multiline = true;
-            this.msgTextbox.Name = "msgTextbox";
-            this.msgTextbox.Size = new System.Drawing.Size(860, 436);
-            this.msgTextbox.TabIndex = 4;
+            this.sendbutton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sendbutton_KeyDown);
             // 
             // mainmenuStrip
             // 
@@ -87,7 +79,7 @@
             this.mainmenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainmenuStrip.Name = "mainmenuStrip";
             this.mainmenuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.mainmenuStrip.Size = new System.Drawing.Size(888, 28);
+            this.mainmenuStrip.Size = new System.Drawing.Size(868, 28);
             this.mainmenuStrip.TabIndex = 16;
             this.mainmenuStrip.Text = "menuStrip1";
             // 
@@ -122,7 +114,7 @@
             // testbutton
             // 
             this.testbutton.Location = new System.Drawing.Point(752, 43);
-            this.testbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.testbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.testbutton.Name = "testbutton";
             this.testbutton.Size = new System.Drawing.Size(97, 28);
             this.testbutton.TabIndex = 15;
@@ -133,7 +125,7 @@
             // handleTextbox
             // 
             this.handleTextbox.Location = new System.Drawing.Point(596, 47);
-            this.handleTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.handleTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.handleTextbox.Name = "handleTextbox";
             this.handleTextbox.Size = new System.Drawing.Size(135, 22);
             this.handleTextbox.TabIndex = 13;
@@ -151,7 +143,7 @@
             // PortTextbox
             // 
             this.PortTextbox.Location = new System.Drawing.Point(485, 47);
-            this.PortTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.PortTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PortTextbox.Name = "PortTextbox";
             this.PortTextbox.Size = new System.Drawing.Size(101, 22);
             this.PortTextbox.TabIndex = 7;
@@ -169,7 +161,7 @@
             // passwdtextbox
             // 
             this.passwdtextbox.Location = new System.Drawing.Point(308, 48);
-            this.passwdtextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.passwdtextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwdtextbox.Name = "passwdtextbox";
             this.passwdtextbox.Size = new System.Drawing.Size(160, 22);
             this.passwdtextbox.TabIndex = 8;
@@ -187,10 +179,19 @@
             // IPtextbox
             // 
             this.IPtextbox.Location = new System.Drawing.Point(16, 48);
-            this.IPtextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.IPtextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.IPtextbox.Name = "IPtextbox";
             this.IPtextbox.Size = new System.Drawing.Size(283, 22);
             this.IPtextbox.TabIndex = 9;
+            // 
+            // msgTextbox
+            // 
+            this.msgTextbox.Location = new System.Drawing.Point(16, 77);
+            this.msgTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.msgTextbox.Name = "msgTextbox";
+            this.msgTextbox.Size = new System.Drawing.Size(832, 434);
+            this.msgTextbox.TabIndex = 17;
+            this.msgTextbox.Text = "";
             // 
             // mainform
             // 
@@ -198,7 +199,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(888, 561);
+            this.ClientSize = new System.Drawing.Size(868, 561);
+            this.Controls.Add(this.msgTextbox);
             this.Controls.Add(this.testbutton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.handleTextbox);
@@ -208,7 +210,6 @@
             this.Controls.Add(this.IPtextbox);
             this.Controls.Add(this.passwdtextbox);
             this.Controls.Add(this.PortTextbox);
-            this.Controls.Add(this.msgTextbox);
             this.Controls.Add(this.sendbutton);
             this.Controls.Add(this.sendingTextbox);
             this.Controls.Add(this.mainmenuStrip);
@@ -241,7 +242,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox IPtextbox;
         public System.Windows.Forms.TextBox sendingTextbox;
-        public System.Windows.Forms.TextBox msgTextbox;
+        private System.Windows.Forms.RichTextBox msgTextbox;
     }
 }
 
