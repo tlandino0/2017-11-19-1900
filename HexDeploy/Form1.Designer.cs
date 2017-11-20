@@ -71,7 +71,7 @@
             // 
             // settingsbutton
             // 
-            this.settingsbutton.Location = new System.Drawing.Point(15, 12);
+            this.settingsbutton.Location = new System.Drawing.Point(12, 12);
             this.settingsbutton.Name = "settingsbutton";
             this.settingsbutton.Size = new System.Drawing.Size(73, 23);
             this.settingsbutton.TabIndex = 5;
@@ -163,7 +163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(674, 473);
+            this.ClientSize = new System.Drawing.Size(666, 473);
             this.Controls.Add(this.testbutton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.handleTextbox);
@@ -178,6 +178,7 @@
             this.Controls.Add(this.sendbutton);
             this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "mainform";
             this.Text = "2017-11-19";
