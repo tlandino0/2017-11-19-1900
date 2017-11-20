@@ -21,6 +21,9 @@ namespace HexDeploy
         private void button3_Click(object sender, EventArgs e)
         {
             //Plans.jpeg
+            msgTextbox.AppendText("Me:" + sendingTextbox.Text + GetTimeStamp(DateTime.UtcNow) + "\n");
+
+            msgTextbox.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -64,6 +67,23 @@ namespace HexDeploy
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        public string GetTimeStamp(DateTime value)
+        {
+            return value.ToString("{" + "yyyy" + "/" + "MM" + "/" + "dd" + "HH:mm:ss" + "}");
+        }
+
+      
+
+        private void mainform_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                msgTextbox.AppendText("\n" + sendingTextbox.Text + "\n" + GetTimeStamp(DateTime.UtcNow));
+                sendingTextbox.Text = "";
+            }
         }
     }
 }
