@@ -3,6 +3,7 @@
 
 0.0.14
 --Changed UI to tab-based system.
+--Changed Titles and stuff
 
 0.0.13
 -Fixed constant stream of text that would occur when holding down the enter key.
