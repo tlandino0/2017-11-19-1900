@@ -1,5 +1,9 @@
 2017-11-19:
 
+0.0.13
+-Fixed constant stream of text that would occur when holding down the enter key.
+-Some code cleanup
+
 0.0.12
 --Text is pushed to the messagebox. 
 --Added timestamps
