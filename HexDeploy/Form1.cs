@@ -23,7 +23,7 @@ namespace HexDeploy
             //Plans.jpeg
             msgTextbox.AppendText("Me:" + sendingTextbox.Text + GetTimeStamp(DateTime.UtcNow) + "\n");
 
-            msgTextbox.Text = "";
+            ///msgTextbox.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -76,19 +76,16 @@ namespace HexDeploy
 
       
 
-        private void mainform_KeyPress(object sender, KeyPressEventArgs e)
+        private void sendingTextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                msgTextbox.AppendText("\n" + sendingTextbox.Text + "\n" + GetTimeStamp(DateTime.UtcNow));
-                sendingTextbox.Text = "";
-            }
+            
         }
 
         private void sendbutton_KeyDown(object sender, KeyEventArgs e)
         {
-
+            msgTextbox.AppendText("\n" + sendingTextbox.Text + "\n" + GetTimeStamp(DateTime.UtcNow));
+            sendingTextbox.Text = "";
         }
     }
 }
