@@ -1,5 +1,11 @@
 2017-11-19:
 
+0.0.12
+--Text is pushed to the messagebox. 
+--Added timestamps
+--Replaced textbox with rich textbox.
+--Enter key sends text
+
 0.0.11
 -- On the road to a functional product. 
 -- Removed settings button, added menu bar. 
