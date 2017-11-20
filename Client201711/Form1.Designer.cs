@@ -44,9 +44,15 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lgtthemebtn = new System.Windows.Forms.Button();
+            this.drkthemebtn = new System.Windows.Forms.Button();
+            this.ngtthemebtn = new System.Windows.Forms.Button();
+            this.logchkBox = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // sendingTextbox
@@ -80,7 +86,7 @@
             // 
             // testbutton
             // 
-            this.testbutton.Location = new System.Drawing.Point(309, 51);
+            this.testbutton.Location = new System.Drawing.Point(335, 46);
             this.testbutton.Name = "testbutton";
             this.testbutton.Size = new System.Drawing.Size(136, 23);
             this.testbutton.TabIndex = 15;
@@ -178,6 +184,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.IPtextbox);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.testbutton);
@@ -197,6 +204,10 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.logchkBox);
+            this.tabPage3.Controls.Add(this.ngtthemebtn);
+            this.tabPage3.Controls.Add(this.drkthemebtn);
+            this.tabPage3.Controls.Add(this.lgtthemebtn);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -204,6 +215,56 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Settings";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lgtthemebtn
+            // 
+            this.lgtthemebtn.Location = new System.Drawing.Point(560, 6);
+            this.lgtthemebtn.Name = "lgtthemebtn";
+            this.lgtthemebtn.Size = new System.Drawing.Size(75, 51);
+            this.lgtthemebtn.TabIndex = 0;
+            this.lgtthemebtn.Text = "Switch to light theme";
+            this.lgtthemebtn.UseVisualStyleBackColor = true;
+            // 
+            // drkthemebtn
+            // 
+            this.drkthemebtn.BackColor = System.Drawing.Color.DimGray;
+            this.drkthemebtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.drkthemebtn.Location = new System.Drawing.Point(560, 63);
+            this.drkthemebtn.Name = "drkthemebtn";
+            this.drkthemebtn.Size = new System.Drawing.Size(75, 46);
+            this.drkthemebtn.TabIndex = 1;
+            this.drkthemebtn.Text = "Switch to Dark Theme";
+            this.drkthemebtn.UseVisualStyleBackColor = false;
+            // 
+            // ngtthemebtn
+            // 
+            this.ngtthemebtn.BackColor = System.Drawing.Color.Black;
+            this.ngtthemebtn.ForeColor = System.Drawing.Color.Transparent;
+            this.ngtthemebtn.Location = new System.Drawing.Point(560, 115);
+            this.ngtthemebtn.Name = "ngtthemebtn";
+            this.ngtthemebtn.Size = new System.Drawing.Size(75, 50);
+            this.ngtthemebtn.TabIndex = 2;
+            this.ngtthemebtn.Text = "Switch to Night Theme";
+            this.ngtthemebtn.UseVisualStyleBackColor = false;
+            // 
+            // logchkBox
+            // 
+            this.logchkBox.AutoSize = true;
+            this.logchkBox.Location = new System.Drawing.Point(6, 24);
+            this.logchkBox.Name = "logchkBox";
+            this.logchkBox.Size = new System.Drawing.Size(134, 17);
+            this.logchkBox.TabIndex = 3;
+            this.logchkBox.Text = "Save chats to a log file";
+            this.logchkBox.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(477, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Connect!";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // mainform
             // 
@@ -223,6 +284,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -244,6 +307,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.CheckBox logchkBox;
+        private System.Windows.Forms.Button ngtthemebtn;
+        private System.Windows.Forms.Button drkthemebtn;
+        private System.Windows.Forms.Button lgtthemebtn;
+        private System.Windows.Forms.Button button1;
     }
 }
 
