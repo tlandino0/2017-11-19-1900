@@ -85,5 +85,10 @@ namespace HexDeploy
                 sendingTextbox.Text = "";
             }
         }
+
+        private void sendbutton_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
