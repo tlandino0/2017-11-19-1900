@@ -7,9 +7,9 @@ using System.Text;
 
 namespace HexDeploy
 {
-    public partial class Form1 : Form
+    public partial class mainform : Form
     {
-        public Form1()
+        public mainform()
         {
             InitializeComponent();
         }
@@ -36,17 +36,17 @@ namespace HexDeploy
 
             try
             {
-                IPAddress serverAddr = IPAddress.Parse(textBox5.Text);
+                IPAddress serverAddr = IPAddress.Parse(IPtextbox.Text);
                 try
                 {
                     //gross bit of code here. On the fly conversion.
-                    int new0 = Convert.ToInt32(textBox3.Text);
+                    int new0 = Convert.ToInt32(PortTextbox.Text);
                     //sets the endpoint with user input from a textbox
                     IPEndPoint ep0 = new IPEndPoint(serverAddr, new0);
                     //test message
                     string text = "testing!";
                     //putting together the buffer for sending the message.
-                    byte[] buffer0 = Encoding.ASCII.GetBytes(text );
+                    byte[] buffer0 = Encoding.ASCII.GetBytes(text);
                     //actually sending the buffer.
                     test.SendTo(buffer0, ep0);
                 }
