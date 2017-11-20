@@ -1,0 +1,21 @@
+2017-11-19:
+
+0.0.11
+-- On the road to a functional product. 
+-- Removed settings button, added menu bar. 
+
+0.0.10
+--Changed border type
+
+0.0.06 - 0.0.09
+--Fixing broken commits
+
+0.0.05
+--Removed unneeded buttons
+--Removed windowgrab code
+
+0.0.04
+--Added a XML file for chatlogging.
+
+0.0.03
+--initial repo commit.
