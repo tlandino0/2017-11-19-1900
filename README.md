@@ -7,4 +7,4 @@ This is a chat program in progress.
 
 Currently not functional. 
 
-aim is by end of 2017
+The aim for making it functional is by the end of 2017. 
