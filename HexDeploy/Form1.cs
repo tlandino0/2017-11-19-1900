@@ -60,5 +60,10 @@ namespace HexDeploy
                 MessageBox.Show("Please input a valid IP address!");
             }
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
