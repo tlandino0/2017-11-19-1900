@@ -49,6 +49,7 @@
             this.ngtthemebtn = new System.Windows.Forms.Button();
             this.logchkBox = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -204,6 +205,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.logchkBox);
             this.tabPage3.Controls.Add(this.ngtthemebtn);
             this.tabPage3.Controls.Add(this.drkthemebtn);
@@ -266,6 +268,17 @@
             this.button1.Text = "Connect!";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(175)))), ((int)(((byte)(0)))));
+            this.button2.Location = new System.Drawing.Point(560, 171);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 50);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Switch to Echelon Theme";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +325,7 @@
         private System.Windows.Forms.Button drkthemebtn;
         private System.Windows.Forms.Button lgtthemebtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
