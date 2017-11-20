@@ -80,7 +80,7 @@
             // 
             // testbutton
             // 
-            this.testbutton.Location = new System.Drawing.Point(331, 46);
+            this.testbutton.Location = new System.Drawing.Point(309, 51);
             this.testbutton.Name = "testbutton";
             this.testbutton.Size = new System.Drawing.Size(136, 23);
             this.testbutton.TabIndex = 15;
@@ -114,7 +114,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(314, 13);
+            this.label2.Location = new System.Drawing.Point(291, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 11;
@@ -122,7 +122,7 @@
             // 
             // passwdtextbox
             // 
-            this.passwdtextbox.Location = new System.Drawing.Point(373, 10);
+            this.passwdtextbox.Location = new System.Drawing.Point(350, 10);
             this.passwdtextbox.Name = "passwdtextbox";
             this.passwdtextbox.Size = new System.Drawing.Size(121, 20);
             this.passwdtextbox.TabIndex = 8;
