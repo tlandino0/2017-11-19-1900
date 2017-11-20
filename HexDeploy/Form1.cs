@@ -71,7 +71,7 @@ namespace HexDeploy
 
         public string GetTimeStamp(DateTime value)
         {
-            return value.ToString("{" + "yyyy" + "/" + "MM" + "/" + "dd" + "HH:mm:ss" + "}");
+            return value.ToString(" {" + "yyyy" + "/" + "MM" + "/" + "dd " + "HH:mm:ss" + "}");
         }
 
       
