@@ -31,7 +31,6 @@
             this.sendingTextbox = new System.Windows.Forms.TextBox();
             this.sendbutton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.testbutton = new System.Windows.Forms.Button();
             this.handleTextbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PortTextbox = new System.Windows.Forms.TextBox();
@@ -43,13 +42,14 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.HndlButton = new System.Windows.Forms.Button();
+            this.connectButton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.lgtthemebtn = new System.Windows.Forms.Button();
-            this.drkthemebtn = new System.Windows.Forms.Button();
-            this.ngtthemebtn = new System.Windows.Forms.Button();
-            this.logchkBox = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.echthemebutton = new System.Windows.Forms.Button();
+            this.logchkBox = new System.Windows.Forms.CheckBox();
+            this.ngtthemebtn = new System.Windows.Forms.Button();
+            this.drkthemebtn = new System.Windows.Forms.Button();
+            this.lgtthemebtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -79,25 +79,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(136, 51);
+            this.label4.Location = new System.Drawing.Point(25, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Handle";
             // 
-            // testbutton
-            // 
-            this.testbutton.Location = new System.Drawing.Point(335, 46);
-            this.testbutton.Name = "testbutton";
-            this.testbutton.Size = new System.Drawing.Size(136, 23);
-            this.testbutton.TabIndex = 15;
-            this.testbutton.Text = "Test Connection";
-            this.testbutton.UseVisualStyleBackColor = true;
-            this.testbutton.Click += new System.EventHandler(this.button5_Click);
-            // 
             // handleTextbox
             // 
-            this.handleTextbox.Location = new System.Drawing.Point(183, 48);
+            this.handleTextbox.Location = new System.Drawing.Point(72, 77);
             this.handleTextbox.Name = "handleTextbox";
             this.handleTextbox.Size = new System.Drawing.Size(102, 20);
             this.handleTextbox.TabIndex = 13;
@@ -105,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 51);
+            this.label3.Location = new System.Drawing.Point(504, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 12;
@@ -113,7 +103,7 @@
             // 
             // PortTextbox
             // 
-            this.PortTextbox.Location = new System.Drawing.Point(40, 48);
+            this.PortTextbox.Location = new System.Drawing.Point(536, 10);
             this.PortTextbox.Name = "PortTextbox";
             this.PortTextbox.Size = new System.Drawing.Size(77, 20);
             this.PortTextbox.TabIndex = 7;
@@ -185,10 +175,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.HndlButton);
+            this.tabPage2.Controls.Add(this.connectButton);
             this.tabPage2.Controls.Add(this.IPtextbox);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.testbutton);
             this.tabPage2.Controls.Add(this.passwdtextbox);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label2);
@@ -202,6 +192,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Connection";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // HndlButton
+            // 
+            this.HndlButton.Location = new System.Drawing.Point(180, 77);
+            this.HndlButton.Name = "HndlButton";
+            this.HndlButton.Size = new System.Drawing.Size(75, 23);
+            this.HndlButton.TabIndex = 17;
+            this.HndlButton.Text = "Set handle";
+            this.HndlButton.UseVisualStyleBackColor = true;
+            this.HndlButton.Click += new System.EventHandler(this.HndlButton_Click);
+            // 
+            // connectButton
+            // 
+            this.connectButton.Location = new System.Drawing.Point(477, 46);
+            this.connectButton.Name = "connectButton";
+            this.connectButton.Size = new System.Drawing.Size(136, 23);
+            this.connectButton.TabIndex = 16;
+            this.connectButton.Text = "Connect!";
+            this.connectButton.UseVisualStyleBackColor = true;
+            this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
             // 
             // tabPage3
             // 
@@ -218,25 +228,26 @@
             this.tabPage3.Text = "Settings";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // lgtthemebtn
+            // echthemebutton
             // 
-            this.lgtthemebtn.Location = new System.Drawing.Point(560, 6);
-            this.lgtthemebtn.Name = "lgtthemebtn";
-            this.lgtthemebtn.Size = new System.Drawing.Size(75, 51);
-            this.lgtthemebtn.TabIndex = 0;
-            this.lgtthemebtn.Text = "Switch to light theme";
-            this.lgtthemebtn.UseVisualStyleBackColor = true;
+            this.echthemebutton.BackColor = System.Drawing.Color.Black;
+            this.echthemebutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(175)))), ((int)(((byte)(0)))));
+            this.echthemebutton.Location = new System.Drawing.Point(560, 171);
+            this.echthemebutton.Name = "echthemebutton";
+            this.echthemebutton.Size = new System.Drawing.Size(75, 50);
+            this.echthemebutton.TabIndex = 4;
+            this.echthemebutton.Text = "Switch to Echelon Theme";
+            this.echthemebutton.UseVisualStyleBackColor = false;
             // 
-            // drkthemebtn
+            // logchkBox
             // 
-            this.drkthemebtn.BackColor = System.Drawing.Color.DimGray;
-            this.drkthemebtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.drkthemebtn.Location = new System.Drawing.Point(560, 63);
-            this.drkthemebtn.Name = "drkthemebtn";
-            this.drkthemebtn.Size = new System.Drawing.Size(75, 46);
-            this.drkthemebtn.TabIndex = 1;
-            this.drkthemebtn.Text = "Switch to Dark Theme";
-            this.drkthemebtn.UseVisualStyleBackColor = false;
+            this.logchkBox.AutoSize = true;
+            this.logchkBox.Location = new System.Drawing.Point(6, 24);
+            this.logchkBox.Name = "logchkBox";
+            this.logchkBox.Size = new System.Drawing.Size(134, 17);
+            this.logchkBox.TabIndex = 3;
+            this.logchkBox.Text = "Save chats to a log file";
+            this.logchkBox.UseVisualStyleBackColor = true;
             // 
             // ngtthemebtn
             // 
@@ -249,35 +260,25 @@
             this.ngtthemebtn.Text = "Switch to Night Theme";
             this.ngtthemebtn.UseVisualStyleBackColor = false;
             // 
-            // logchkBox
+            // drkthemebtn
             // 
-            this.logchkBox.AutoSize = true;
-            this.logchkBox.Location = new System.Drawing.Point(6, 24);
-            this.logchkBox.Name = "logchkBox";
-            this.logchkBox.Size = new System.Drawing.Size(134, 17);
-            this.logchkBox.TabIndex = 3;
-            this.logchkBox.Text = "Save chats to a log file";
-            this.logchkBox.UseVisualStyleBackColor = true;
+            this.drkthemebtn.BackColor = System.Drawing.Color.DimGray;
+            this.drkthemebtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.drkthemebtn.Location = new System.Drawing.Point(560, 63);
+            this.drkthemebtn.Name = "drkthemebtn";
+            this.drkthemebtn.Size = new System.Drawing.Size(75, 46);
+            this.drkthemebtn.TabIndex = 1;
+            this.drkthemebtn.Text = "Switch to Dark Theme";
+            this.drkthemebtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // lgtthemebtn
             // 
-            this.button1.Location = new System.Drawing.Point(477, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Connect!";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // echthemebutton
-            // 
-            this.echthemebutton.BackColor = System.Drawing.Color.Black;
-            this.echthemebutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(175)))), ((int)(((byte)(0)))));
-            this.echthemebutton.Location = new System.Drawing.Point(560, 171);
-            this.echthemebutton.Name = "echthemebutton";
-            this.echthemebutton.Size = new System.Drawing.Size(75, 50);
-            this.echthemebutton.TabIndex = 4;
-            this.echthemebutton.Text = "Switch to Echelon Theme";
-            this.echthemebutton.UseVisualStyleBackColor = false;
+            this.lgtthemebtn.Location = new System.Drawing.Point(560, 6);
+            this.lgtthemebtn.Name = "lgtthemebtn";
+            this.lgtthemebtn.Size = new System.Drawing.Size(75, 51);
+            this.lgtthemebtn.TabIndex = 0;
+            this.lgtthemebtn.Text = "Switch to light theme";
+            this.lgtthemebtn.UseVisualStyleBackColor = true;
             // 
             // mainform
             // 
@@ -306,7 +307,6 @@
         #endregion
         private System.Windows.Forms.Button sendbutton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button testbutton;
         private System.Windows.Forms.TextBox handleTextbox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox PortTextbox;
@@ -324,8 +324,9 @@
         private System.Windows.Forms.Button ngtthemebtn;
         private System.Windows.Forms.Button drkthemebtn;
         private System.Windows.Forms.Button lgtthemebtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button connectButton;
         private System.Windows.Forms.Button echthemebutton;
+        private System.Windows.Forms.Button HndlButton;
     }
 }
 
