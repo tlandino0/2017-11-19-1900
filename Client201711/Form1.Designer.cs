@@ -48,6 +48,7 @@
             this.ngtthemebtn = new System.Windows.Forms.Button();
             this.drkthemebtn = new System.Windows.Forms.Button();
             this.lgtthemebtn = new System.Windows.Forms.Button();
+            this.dcButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -57,6 +58,7 @@
             // sendingTextbox
             // 
             this.sendingTextbox.AcceptsTab = true;
+            this.sendingTextbox.Enabled = false;
             this.sendingTextbox.Location = new System.Drawing.Point(8, 400);
             this.sendingTextbox.Name = "sendingTextbox";
             this.sendingTextbox.Size = new System.Drawing.Size(538, 20);
@@ -66,6 +68,7 @@
             // 
             // sendbutton
             // 
+            this.sendbutton.Enabled = false;
             this.sendbutton.Location = new System.Drawing.Point(562, 392);
             this.sendbutton.Name = "sendbutton";
             this.sendbutton.Size = new System.Drawing.Size(75, 35);
@@ -126,6 +129,7 @@
             // 
             this.msgTextbox.Location = new System.Drawing.Point(3, 6);
             this.msgTextbox.Name = "msgTextbox";
+            this.msgTextbox.ReadOnly = true;
             this.msgTextbox.Size = new System.Drawing.Size(632, 383);
             this.msgTextbox.TabIndex = 17;
             this.msgTextbox.Text = "";
@@ -157,6 +161,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dcButton);
             this.tabPage2.Controls.Add(this.HndlButton);
             this.tabPage2.Controls.Add(this.connectButton);
             this.tabPage2.Controls.Add(this.IPtextbox);
@@ -185,11 +190,12 @@
             // 
             // connectButton
             // 
-            this.connectButton.Location = new System.Drawing.Point(497, 8);
+            this.connectButton.Enabled = false;
+            this.connectButton.Location = new System.Drawing.Point(485, 7);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(106, 23);
             this.connectButton.TabIndex = 16;
-            this.connectButton.Text = "Connect!";
+            this.connectButton.Text = "Connect";
             this.connectButton.UseVisualStyleBackColor = true;
             this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
             // 
@@ -265,6 +271,17 @@
             this.lgtthemebtn.Text = "Switch to light theme";
             this.lgtthemebtn.UseVisualStyleBackColor = true;
             // 
+            // dcButton
+            // 
+            this.dcButton.Enabled = false;
+            this.dcButton.Location = new System.Drawing.Point(485, 39);
+            this.dcButton.Name = "dcButton";
+            this.dcButton.Size = new System.Drawing.Size(106, 23);
+            this.dcButton.TabIndex = 18;
+            this.dcButton.Text = "Disconnect";
+            this.dcButton.UseVisualStyleBackColor = true;
+            this.dcButton.Click += new System.EventHandler(this.dcButton_Click);
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,6 +327,7 @@
         private System.Windows.Forms.Button connectButton;
         private System.Windows.Forms.Button echthemebutton;
         private System.Windows.Forms.Button HndlButton;
+        private System.Windows.Forms.Button dcButton;
     }
 }
 

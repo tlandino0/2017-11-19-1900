@@ -126,6 +126,7 @@ namespace HexDeploy
         private void HndlButton_Click(object sender, EventArgs e)
         {
             handlenm = Convert.ToString(handleTextbox.Text);
+            connectButton.Enabled = true;
         }
         private void passconnect()
         {
@@ -140,17 +141,57 @@ namespace HexDeploy
         {
             msgTextbox.AppendText("Connecting... \n");
             messaging();
-            string ip = Convert.ToString(IPtextbox.Text);
-            int port = Convert.ToInt32(PortTextbox.Text);
-            clsock.Connect(ip, port);
-            servStream = clsock.GetStream(); 
-            byte[] outS = Encoding.ASCII.GetBytes(handlenm + "$");
-            servStream.Write(outS, 0, outS.Length);
-            servStream.Flush();
-
+            sendbutton.Enabled = true;
+            sendingTextbox.Enabled = true;
+            string ip = "";
+            byte[] outS = null;
+            int port = 0;
+            try
+            {
+                ip = Convert.ToString(IPtextbox.Text);
+                port = Convert.ToInt32(PortTextbox.Text);
+                try
+                {
+                    clsock.Connect(ip, port);
+                    servStream = clsock.GetStream();
+                }
+                catch
+                {
+                    MessageBox.Show("Connection to server timed out. Abort.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Please input usable values!");
+            }   
+            
             Thread connectThread = new Thread(getMsg);
-            connectThread.Start();
-
+            //clsock.Connect(ip, port);
+            //servStream = clsock.GetStream(); 
+            try
+            {
+                outS = Encoding.ASCII.GetBytes(handlenm + "$");
+                servStream.Write(outS, 0, outS.Length);
+                servStream.Flush();
+                try
+                {
+                    connectThread.Start();
+                }
+                catch
+                {
+                    
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Server failed to connect. ");
+            }
+            //byte[] outS = Encoding.ASCII.GetBytes(handlenm + "$");
+            //servStream.Write(outS, 0, outS.Length);
+            //servStream.Flush();
+            dcButton.Enabled = true;
+            
+            connectButton.Enabled = false;
 
         }
         private void getMsg()
@@ -158,26 +199,79 @@ namespace HexDeploy
             
             while (true)
             {
-                servStream = clsock.GetStream();
                 int buffersz = 0;
                 byte[] ins = new byte[10025];
-                buffersz = clsock.ReceiveBufferSize;
-                servStream.Read(ins, 0, ins.Length);
-                string dataret = Encoding.ASCII.GetString(ins);
-                rd = "" + dataret;
+                string dataret = "";
+                try
+                {
+                    servStream = clsock.GetStream();
+                    try
+                    {
+                        buffersz = clsock.ReceiveBufferSize;
+                        servStream.Read(ins, 0, ins.Length);
+                        dataret = Encoding.ASCII.GetString(ins);
+                        rd = "" + dataret;
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                catch
+                {
+
+                }
                 messaging();
+
+
+
             }
         }
         private void messaging()
         {
             if (this.InvokeRequired)
             {
-                this.Invoke(new MethodInvoker(messaging));
+                try
+                {
+                    this.Invoke(new MethodInvoker(messaging));
+                }
+                catch
+                {
+
+                }
+                
             }
             else
             {
-                msgTextbox.AppendText("\n " + rd);
+                try
+                {
+                    msgTextbox.AppendText("\n " + rd);
+                }
+                catch
+                {
+
+                }
+                
             }
+        }
+
+        private void dcButton_Click(object sender, EventArgs e)
+        {
+            using (TcpClient clsock = new TcpClient())
+            {
+                LingerOption lingerOption = new LingerOption(true, 0);
+
+
+
+                Disconnect();
+
+            }
+        }
+        private void Disconnect()
+        {
+            clsock.Close();
+            servStream.Close();
+
         }
     }
 }
