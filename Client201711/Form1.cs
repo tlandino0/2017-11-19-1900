@@ -16,7 +16,7 @@ namespace HexDeploy
         string rd;
 
         public bool keydown = false;
-        public string handlenm = "Username not set";
+        public string handlenm = string.Empty;
         public string password;
 
         public static string Base64Encode(string plain)
@@ -176,7 +176,7 @@ namespace HexDeploy
             }
             else
             {
-                msgTextbox.AppendText("\n >" + rd);
+                msgTextbox.AppendText("\n " + rd);
             }
         }
     }
