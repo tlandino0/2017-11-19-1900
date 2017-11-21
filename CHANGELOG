@@ -1,11 +1,15 @@
 2017-11-19:
 
+0.0.16
+--Actual internet things.
+This is a VERY unstable release, rife with bugs. Use at your own risk. 
+
 0.0.15
---Added buttons for the features
+--Added buttons for features that will be added at a later date.
 
 0.0.14
 --Changed UI to tab-based system.
---Changed Titles and stuff
+--Changed titles and stuff
 
 0.0.13
 -Fixed constant stream of text that would occur when holding down the enter key.
