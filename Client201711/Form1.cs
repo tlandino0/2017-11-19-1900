@@ -36,11 +36,16 @@ namespace HexDeploy
         }
         private void button3_MouseClick(object sender, EventArgs e)
         {
+           
             byte[] outS = Encoding.ASCII.GetBytes(sendingTextbox.Text + "$");
             servStream.Write(outS, 0, outS.Length);
             //msgTextbox.AppendText(GetTimeStamp(DateTime.UtcNow) + "Me:" + sendingTextbox.Text + "\n");
             sendingTextbox.Text = "";
             servStream.Flush();
+            if (!sendingTextbox.Focused)
+            {
+                sendingTextbox.Focus();
+            }
 
 
         }
@@ -115,6 +120,7 @@ namespace HexDeploy
             //msgTextbox.AppendText(GetTimeStamp(DateTime.UtcNow) + "Me:" + sendingTextbox.Text + "\n");
             sendingTextbox.Text = "";
             servStream.Flush();
+            
         }
 
         private void HndlButton_Click(object sender, EventArgs e)

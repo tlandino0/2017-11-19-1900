@@ -34,8 +34,6 @@
             this.handleTextbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PortTextbox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.passwdtextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.IPtextbox = new System.Windows.Forms.TextBox();
             this.msgTextbox = new System.Windows.Forms.RichTextBox();
@@ -79,7 +77,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 80);
+            this.label4.Location = new System.Drawing.Point(24, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 14;
@@ -87,7 +85,7 @@
             // 
             // handleTextbox
             // 
-            this.handleTextbox.Location = new System.Drawing.Point(72, 77);
+            this.handleTextbox.Location = new System.Drawing.Point(71, 36);
             this.handleTextbox.Name = "handleTextbox";
             this.handleTextbox.Size = new System.Drawing.Size(102, 20);
             this.handleTextbox.TabIndex = 13;
@@ -95,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(504, 13);
+            this.label3.Location = new System.Drawing.Point(321, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 12;
@@ -103,26 +101,10 @@
             // 
             // PortTextbox
             // 
-            this.PortTextbox.Location = new System.Drawing.Point(536, 10);
+            this.PortTextbox.Location = new System.Drawing.Point(353, 10);
             this.PortTextbox.Name = "PortTextbox";
             this.PortTextbox.Size = new System.Drawing.Size(77, 20);
             this.PortTextbox.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(291, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Password";
-            // 
-            // passwdtextbox
-            // 
-            this.passwdtextbox.Location = new System.Drawing.Point(350, 10);
-            this.passwdtextbox.Name = "passwdtextbox";
-            this.passwdtextbox.Size = new System.Drawing.Size(121, 20);
-            this.passwdtextbox.TabIndex = 8;
             // 
             // label1
             // 
@@ -179,9 +161,7 @@
             this.tabPage2.Controls.Add(this.connectButton);
             this.tabPage2.Controls.Add(this.IPtextbox);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.passwdtextbox);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.handleTextbox);
             this.tabPage2.Controls.Add(this.PortTextbox);
@@ -195,7 +175,7 @@
             // 
             // HndlButton
             // 
-            this.HndlButton.Location = new System.Drawing.Point(180, 77);
+            this.HndlButton.Location = new System.Drawing.Point(179, 36);
             this.HndlButton.Name = "HndlButton";
             this.HndlButton.Size = new System.Drawing.Size(75, 23);
             this.HndlButton.TabIndex = 17;
@@ -205,9 +185,9 @@
             // 
             // connectButton
             // 
-            this.connectButton.Location = new System.Drawing.Point(477, 46);
+            this.connectButton.Location = new System.Drawing.Point(497, 8);
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(136, 23);
+            this.connectButton.Size = new System.Drawing.Size(106, 23);
             this.connectButton.TabIndex = 16;
             this.connectButton.Text = "Connect!";
             this.connectButton.UseVisualStyleBackColor = true;
@@ -231,6 +211,7 @@
             // echthemebutton
             // 
             this.echthemebutton.BackColor = System.Drawing.Color.Black;
+            this.echthemebutton.Enabled = false;
             this.echthemebutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(175)))), ((int)(((byte)(0)))));
             this.echthemebutton.Location = new System.Drawing.Point(560, 171);
             this.echthemebutton.Name = "echthemebutton";
@@ -242,7 +223,8 @@
             // logchkBox
             // 
             this.logchkBox.AutoSize = true;
-            this.logchkBox.Location = new System.Drawing.Point(6, 24);
+            this.logchkBox.Enabled = false;
+            this.logchkBox.Location = new System.Drawing.Point(22, 15);
             this.logchkBox.Name = "logchkBox";
             this.logchkBox.Size = new System.Drawing.Size(134, 17);
             this.logchkBox.TabIndex = 3;
@@ -252,6 +234,7 @@
             // ngtthemebtn
             // 
             this.ngtthemebtn.BackColor = System.Drawing.Color.Black;
+            this.ngtthemebtn.Enabled = false;
             this.ngtthemebtn.ForeColor = System.Drawing.Color.Transparent;
             this.ngtthemebtn.Location = new System.Drawing.Point(560, 115);
             this.ngtthemebtn.Name = "ngtthemebtn";
@@ -263,6 +246,7 @@
             // drkthemebtn
             // 
             this.drkthemebtn.BackColor = System.Drawing.Color.DimGray;
+            this.drkthemebtn.Enabled = false;
             this.drkthemebtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.drkthemebtn.Location = new System.Drawing.Point(560, 63);
             this.drkthemebtn.Name = "drkthemebtn";
@@ -273,6 +257,7 @@
             // 
             // lgtthemebtn
             // 
+            this.lgtthemebtn.Enabled = false;
             this.lgtthemebtn.Location = new System.Drawing.Point(560, 6);
             this.lgtthemebtn.Name = "lgtthemebtn";
             this.lgtthemebtn.Size = new System.Drawing.Size(75, 51);
@@ -310,8 +295,6 @@
         private System.Windows.Forms.TextBox handleTextbox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox PortTextbox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox passwdtextbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox IPtextbox;
         public System.Windows.Forms.TextBox sendingTextbox;
