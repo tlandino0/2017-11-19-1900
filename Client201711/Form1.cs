@@ -270,6 +270,9 @@ namespace HexDeploy
         }
         private void Disconnect()
         {
+            byte[] outS = Encoding.ASCII.GetBytes("3DF38FC9" + "$");
+            servStream.Write(outS, 0, outS.Length);
+            servStream.Flush();
             clsock.Close();
             servStream.Close();
 
