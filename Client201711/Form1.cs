@@ -11,6 +11,7 @@ namespace HexDeploy
     
     public partial class mainform : Form
     {
+        Thread connectThread;
         TcpClient clsock = new TcpClient();
         NetworkStream servStream = default(NetworkStream);
         string rd;
@@ -163,9 +164,9 @@ namespace HexDeploy
             catch
             {
                 MessageBox.Show("Please input usable values!");
-            }   
-            
-            Thread connectThread = new Thread(getMsg);
+            }
+
+            connectThread = new Thread(getMsg);
             //clsock.Connect(ip, port);
             //servStream = clsock.GetStream(); 
             try
@@ -263,18 +264,22 @@ namespace HexDeploy
                 LingerOption lingerOption = new LingerOption(true, 0);
 
 
-
+                
                 Disconnect();
 
             }
         }
         private void Disconnect()
         {
+            
             byte[] outS = Encoding.ASCII.GetBytes("3DF38FC9" + "$");
             servStream.Write(outS, 0, outS.Length);
             servStream.Flush();
+            connectThread.Abort();
             clsock.Close();
             servStream.Close();
+            servStream.Dispose();
+            
 
         }
     }
