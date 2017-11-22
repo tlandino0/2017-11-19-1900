@@ -12,8 +12,8 @@ namespace HexDeploy
     public partial class mainform : Form
     {
         Thread connectThread;
-        TcpClient clsock = new TcpClient();
-        NetworkStream servStream = default(NetworkStream);
+        TcpClient clsock;
+        NetworkStream servStream;
         string rd;
 
         public bool keydown = false;
@@ -147,6 +147,9 @@ namespace HexDeploy
             string ip = "";
             byte[] outS = null;
             int port = 0;
+            servStream = default(NetworkStream);
+            clsock = new TcpClient();
+
             try
             {
                 ip = Convert.ToString(IPtextbox.Text);
@@ -180,19 +183,17 @@ namespace HexDeploy
                 }
                 catch
                 {
-                    
+                    MessageBox.Show("Server failed to connect. ");
                 }
             }
             catch
             {
                 MessageBox.Show("Server failed to connect. ");
             }
-            //byte[] outS = Encoding.ASCII.GetBytes(handlenm + "$");
-            //servStream.Write(outS, 0, outS.Length);
-            //servStream.Flush();
+            
             dcButton.Enabled = true;
             
-            connectButton.Enabled = false;
+            
 
         }
         private void getMsg()
@@ -217,15 +218,13 @@ namespace HexDeploy
                     {
 
                     }
+                    messaging();
                 }
                 catch
                 {
-
+                    connectThread.Abort();
+                    MessageBox.Show("Server caused connection abort.");
                 }
-                messaging();
-
-
-
             }
         }
         private void messaging()
@@ -275,11 +274,11 @@ namespace HexDeploy
             byte[] outS = Encoding.ASCII.GetBytes("3DF38FC9" + "$");
             servStream.Write(outS, 0, outS.Length);
             servStream.Flush();
-            connectThread.Abort();
             clsock.Close();
             servStream.Close();
-            servStream.Dispose();
-            
+            //servStream.Dispose();
+            connectThread.Abort();
+
 
         }
     }
