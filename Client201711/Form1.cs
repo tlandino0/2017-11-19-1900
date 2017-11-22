@@ -259,6 +259,7 @@ namespace HexDeploy
         {
             using (TcpClient clsock = new TcpClient())
             {
+                connectButton.Enabled = true;
                 LingerOption lingerOption = new LingerOption(true, 0);
 
 
