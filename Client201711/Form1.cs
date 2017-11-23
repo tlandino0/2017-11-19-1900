@@ -117,10 +117,19 @@ namespace HexDeploy
         private void sendbutton_MouseClick(object sender, MouseEventArgs e)
         {
             byte[] outS = Encoding.ASCII.GetBytes(sendingTextbox.Text + "$");
-            servStream.Write(outS, 0, outS.Length);
-            //msgTextbox.AppendText(GetTimeStamp(DateTime.UtcNow) + "Me:" + sendingTextbox.Text + "\n");
-            sendingTextbox.Text = "";
-            servStream.Flush();
+            try
+            {
+                servStream.Write(outS, 0, outS.Length);
+                sendingTextbox.Text = "";
+                servStream.Flush();
+
+            }
+            catch
+            {
+                MessageBox.Show("Server failed to connect. ");
+                Disconnect();
+            }
+            
             
         }
 
@@ -129,19 +138,14 @@ namespace HexDeploy
             handlenm = Convert.ToString(handleTextbox.Text);
             connectButton.Enabled = true;
         }
-        private void passconnect()
-        {
-            //password = Convert.ToString(passwdtextbox.Text);
-
-            //password = Base64Encode(password);
-            //MessageBox.Show(password);
-
-        }
 
         private void connectButton_Click(object sender, EventArgs e)
         {
+            Random temprand0 = new Random();
+            int temp0 = temprand0.Next(0, 32767);
             msgTextbox.AppendText("Connecting... \n");
             messaging();
+            handlenm = handlenm + temp0;
             sendbutton.Enabled = true;
             sendingTextbox.Enabled = true;
             string ip = "";
@@ -170,8 +174,7 @@ namespace HexDeploy
             }
 
             connectThread = new Thread(getMsg);
-            //clsock.Connect(ip, port);
-            //servStream = clsock.GetStream(); 
+             
             try
             {
                 outS = Encoding.ASCII.GetBytes(handlenm + "$");
@@ -184,11 +187,13 @@ namespace HexDeploy
                 catch
                 {
                     MessageBox.Show("Server failed to connect. ");
+                    Disconnect();
                 }
             }
             catch
             {
                 MessageBox.Show("Server failed to connect. ");
+                Disconnect();
             }
             
             dcButton.Enabled = true;
@@ -272,10 +277,31 @@ namespace HexDeploy
         {
             
             byte[] outS = Encoding.ASCII.GetBytes("3DF38FC9" + "$");
-            servStream.Write(outS, 0, outS.Length);
-            servStream.Flush();
-            clsock.Close();
-            servStream.Close();
+            try
+            {
+                servStream.Write(outS, 0, outS.Length);
+                servStream.Flush();
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                clsock.Close();
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                servStream.Close();
+            }
+            catch
+            {
+
+            }
             //servStream.Dispose();
             connectThread.Abort();
 
